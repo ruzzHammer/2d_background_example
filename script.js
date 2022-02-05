@@ -37,14 +37,16 @@ for (let i = 0; i < 5; i++) {
   layers.push(layer);
 }
 
-const slider = document.getElementById('slider');
-slider.value = gameSpeed;
-const showGameSpeed = document.getElementById('showGameSpeed');
-showGameSpeed.innerText = gameSpeed;
-slider.addEventListener('change', e => {
-  gameSpeed = e.target.value;
-  showGameSpeed.innerText = gameSpeed;
-})
+// To enable speedSlider
+
+// const slider = document.getElementById('slider');
+// slider.value = gameSpeed;
+// const showGameSpeed = document.getElementById('showGameSpeed');
+// showGameSpeed.innerText = gameSpeed;
+// slider.addEventListener('change', e => {
+//   gameSpeed = e.target.value;
+//   showGameSpeed.innerText = gameSpeed;
+// })
 
 const audio = document.querySelector('#audio');
 audio.volume = 0.3;
@@ -62,4 +64,16 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-animate();
+const startButton = document.querySelector('.preloader__start-button');
+
+window.addEventListener('load', () => {
+  document.querySelector('.preloader__text').classList.add('hidden');
+  startButton.classList.remove('hidden');
+  startButton.addEventListener('click', () => {
+    document.querySelector('.preloader').remove();
+    animate();
+    audio.play();
+    document.querySelector('.audio-wrap').classList.remove('hidden');
+    document.querySelector('.rain').classList.remove('hidden');
+  }, {once: true});
+})

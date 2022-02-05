@@ -3,6 +3,33 @@ body {
   padding-bottom: 60px;
 }
 
+.preloader {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+}
+
+.preloader__text {
+  font-size: 25px;
+  color: #fff;
+}
+
+.preloader__start-button {
+  border: none;
+  border-radius: 5px;
+  background: #606060;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 #container {
   position: absolute;
   width: 800px;
@@ -12,7 +39,7 @@ body {
   font-size: 25px;
 }
 
-#container::after {
+.rain {
   content: '';
   position: absolute;
   top: 0px;
@@ -23,7 +50,7 @@ body {
   z-index: 10;
 }
 
-.audio {
+.audio-wrap {
   position: absolute;
   top: 10px;
   right: -50px;
