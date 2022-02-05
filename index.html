@@ -8,14 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="preloader">
+    <span class="preloader__text">Please wait ...</span>  
+    <button class="preloader__start-button hidden">Start</button>
+  </div>
   <div id="container">
-    <div class="audio">
+    <div class="audio-wrap hidden">
       <div class="audio-toggler"></div>
-      <audio src="assets/effect/effect.mp3" autoplay id="audio"></audio>
+      <audio src="assets/effect/effect.mp3" id="audio"></audio>
     </div>
+    <div class="rain hidden"></div>
     <canvas id="canvas"></canvas>
-    <p>Game speed: <span id="showGameSpeed"></span></p>
-    <input type="range" name="slider" class="slider" id="slider" min="0" max="5" value="2">
+    <!-- SpeedSlider Begin -->
+    <!-- <p>Game speed: <span id="showGameSpeed"></span></p>
+    <input type="range" name="slider" class="slider" id="slider" min="0" max="5" value="2"> -->
+    <!-- SpeedSlider End -->
   </div>
   <script src="script.js"></script>
 </body>
